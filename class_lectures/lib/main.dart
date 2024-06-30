@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -50,6 +52,29 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     // either return a widget or widget tree
     // return const Placeholder(); // just a cross;
-    return const Text("Hello Again from the Stateless World");
+    // return const Text("Hello Again from the Stateless World");
+    return Container(
+      color: Colors.orange,
+      // width: 200,
+      // height: 100,
+      padding: const EdgeInsets.all(20), // apply equally all sides
+      // margin: const EdgeInsets.only(left: 20),
+      margin: const EdgeInsets.fromLTRB(10, 40, 0, 0),
+      child: const Text(
+        "Hello Again",
+        style: TextStyle(
+          fontSize: 40,
+          letterSpacing: 4,
+          decoration: TextDecoration.underline,
+          fontStyle: FontStyle.italic,
+        ),
+      ),
+      // child should be last argument
+    );
   }
 }
+
+// container
+// wraps other widgets
+// padding and margin added easily
+// child argument introduced. Takes up a default space
