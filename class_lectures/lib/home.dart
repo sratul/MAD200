@@ -1,6 +1,5 @@
-// add this to include the libraries being used 
+// add this to include the libraries being used
 import 'package:flutter/material.dart';
-
 
 class Home extends StatelessWidget {
   const Home({super.key}); // ignore this for now
@@ -19,11 +18,31 @@ class Home extends StatelessWidget {
         // instead we can add the const here whenever we encounter blue
         // squigly lines
         // helps with performance but we may have to remove them once again
-        title: const Text("Hello World"), // arguments end with comma
+        title: const Text("Hello World",
+            style: TextStyle(
+              color: Colors.white,
+              fontWeight: FontWeight.bold,
+            )),
         backgroundColor: Colors.blueGrey[500],
         centerTitle: true,
       ),
-      body: const Text("Hello to All of you!!!!"),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Container(
+            color: Colors.brown[300],
+            padding: const EdgeInsets.all(20),
+            alignment: Alignment.center,
+            child: const Text("How you doin"),
+          ),
+          Container(
+            color: Colors.brown[100],
+            padding: const EdgeInsets.all(100),
+            alignment: Alignment.center,
+            child: const Text('Wanna grab some Coffee?'),
+          )
+        ],
+      ),
       // body: const Home(), // adding the stateless widget
     );
   }
