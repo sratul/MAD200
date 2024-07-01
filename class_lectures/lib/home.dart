@@ -1,6 +1,8 @@
 // add this to include the libraries being used
 import 'package:class_lectures/coffee_prefs.dart';
+import 'package:class_lectures/styled_body_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key}); // ignore this for now
@@ -34,7 +36,7 @@ class Home extends StatelessWidget {
             color: Colors.brown[300],
             padding: const EdgeInsets.all(20),
             // alignment: Alignment.center,
-            child: const Text("How you doin"),
+            child: const StyledBodyText("How do you like your coffee?"),
           ),
           Container(
             color: Colors.brown[100],

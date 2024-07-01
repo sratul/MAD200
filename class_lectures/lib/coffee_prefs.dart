@@ -1,3 +1,5 @@
+import 'package:class_lectures/styled_body_text.dart';
+import 'package:class_lectures/styled_button.dart';
 import 'package:flutter/material.dart';
 
 // To turn stateless widget to a stateful one
@@ -35,7 +37,7 @@ class _CoffeePrefsState extends State<CoffeePrefs> {
     return Column(children: [
       Row(
         children: [
-          const Text("Strength: "),
+          const StyledBodyText("Strength: "),
           // Text("$strength"),
           for (int i = 0; i < strength; i++)
             Image.asset(
@@ -47,19 +49,15 @@ class _CoffeePrefsState extends State<CoffeePrefs> {
 
           const Expanded(child: SizedBox()),
           // const Text("+"),
-          FilledButton(
-              style: FilledButton.styleFrom(
-                  backgroundColor: Colors.brown, foregroundColor: Colors.white),
-              onPressed: increaseStrength,
-              child: const Text("+"))
+          StyledButton(onPressed: increaseStrength, child: const Text("+"))
         ], //be careful not to invoke the functions by adding ()
         // after their names. RIght now just reference them
       ),
       Row(
         children: [
-          const Text("Sugars: "),
+          const StyledBodyText("Sugars: "),
 
-          if (sugars == 0) const Text("No sugars...."),
+          if (sugars == 0) const StyledBodyText("No sugars...."),
           // Text("$sugars"),
           for (int i = 0; i < sugars; i++)
             Image.asset(
@@ -70,12 +68,7 @@ class _CoffeePrefsState extends State<CoffeePrefs> {
             ),
           const Expanded(child: SizedBox()),
           // const Text("+"),
-          TextButton(
-              style: TextButton.styleFrom(
-                foregroundColor: Colors.brown,
-              ),
-              onPressed: increaseSugars,
-              child: const Text("+"))
+          StyledButton(onPressed: increaseSugars, child: const Text("+"))
         ], //be careful not to invoke the functions by adding ()
         // after their names. RIght now just reference them
       )
