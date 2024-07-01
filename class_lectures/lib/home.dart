@@ -1,4 +1,5 @@
 // add this to include the libraries being used
+import 'package:class_lectures/coffee_prefs.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatelessWidget {
@@ -32,14 +33,14 @@ class Home extends StatelessWidget {
           Container(
             color: Colors.brown[300],
             padding: const EdgeInsets.all(20),
-            alignment: Alignment.center,
+            // alignment: Alignment.center,
             child: const Text("How you doin"),
           ),
           Container(
             color: Colors.brown[100],
-            padding: const EdgeInsets.all(100),
-            alignment: Alignment.center,
-            child: const Text('Wanna grab some Coffee?'),
+            padding: const EdgeInsets.all(20),
+            // alignment: Alignment.center,
+            child: CoffeePrefs(),
           )
         ],
       ),

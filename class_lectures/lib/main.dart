@@ -20,30 +20,31 @@ class SandBox extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Sandbox'),
-        backgroundColor: Colors.blueGrey[400],
+        title: Text("HELLO SCREEN"),
+        backgroundColor: Colors.amber[200],
       ),
-      // Children Define the column width
-      // Here the largest container: green
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        mainAxisAlignment: MainAxisAlignment.center,
+      body: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            width: 100,
-            color: Colors.red[100],
-            child: Text("One"),
+            height: 100,
+            color: Colors.brown[300],
+            alignment: Alignment.center,
+            child: const Text("One"),
           ),
           Container(
-            width: 200,
-            color: Colors.blue,
-            child: Text("Two"),
+            height: 200,
+            color: Colors.red[300],
+            alignment: Alignment.center,
+            child: const Text("TWO"),
           ),
           Container(
-            width: 300,
-            color: Colors.green,
-            child: Text("Three"),
-          )
+            height: 300,
+            color: Colors.blue[300],
+            alignment: Alignment.center,
+            child: const Text("THREE"),
+          ),
         ],
       ),
     );
