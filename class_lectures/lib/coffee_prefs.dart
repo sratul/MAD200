@@ -1,23 +1,42 @@
 import 'package:flutter/material.dart';
 
-class CoffeePrefs extends StatelessWidget {
+// To turn stateless widget to a stateful one
+// click on the class name and right click to get refactor
+// click the option to turn the widget into a stateful one
+class CoffeePrefs extends StatefulWidget {
   const CoffeePrefs({super.key});
 
+  @override
+  State<CoffeePrefs> createState() => _CoffeePrefsState();
+}
+
+// you will get a second class that extends stand
+class _CoffeePrefsState extends State<CoffeePrefs> {
+  int strength = 1;
+  int sugars = 0;
+
   void increaseStrength() {
-    print("inc strength by 1");
+    // strength += 1; //ternary operator
+    setState(() {
+      strength = strength < 5 ? strength + 1 : 1;
+    });
   }
 
   void increaseSugars() {
-    print("inc sugar by 1");
+    setState(() {
+      sugars = sugars < 5 ? sugars + 1 : 0;
+    });
+    // build functions needs to run again for the update
   }
 
+  // build functions needs to run again for the update
   @override
   Widget build(BuildContext context) {
     return Column(children: [
       Row(
         children: [
           const Text("Strength: "),
-          const Text("3"),
+          Text("$strength"),
           Image.asset(
             "assets/img/coffee_bean.png",
             width: 25,
@@ -37,7 +56,7 @@ class CoffeePrefs extends StatelessWidget {
       Row(
         children: [
           const Text("Sugars: "),
-          const Text("3"),
+          Text("$sugars"),
           Image.asset(
             "assets/img/sugar_cube.png",
             width: 25,
