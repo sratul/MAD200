@@ -42,7 +42,16 @@ class Home extends StatelessWidget {
             // alignment: Alignment.center,
             child: CoffeePrefs(),
           ),
-          // Image.asset("assets/img/coffee_bg.jpg")
+          // to get context menu right click on widget and select
+          // refactor. Select wrap with widget to get
+          // the expanded widget
+          Expanded(
+            child: Image.asset(
+              "assets/img/coffee_bg.jpg",
+              fit: BoxFit.fitWidth,
+              alignment: Alignment.bottomCenter,
+            ),
+          )
         ],
       ),
       // body: const Home(), // adding the stateless widget
