@@ -41,7 +41,8 @@ class Home extends StatelessWidget {
             padding: const EdgeInsets.all(20),
             // alignment: Alignment.center,
             child: CoffeePrefs(),
-          )
+          ),
+          // Image.asset("assets/img/coffee_bg.jpg")
         ],
       ),
       // body: const Home(), // adding the stateless widget
