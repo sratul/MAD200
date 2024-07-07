@@ -45,7 +45,15 @@ class _QuoteListState extends State<QuoteList> {
             Text(
               quote.author,
               style: TextStyle(fontSize: 14, color: Colors.grey[800]),
-            )
+            ),
+            SizedBox(
+              height: 8,
+            ),
+            FilledButton.icon(
+              onPressed: () {},
+              label: Text("Delete Quote"),
+              icon: Icon(Icons.delete),
+            ),
           ],
         ),
       ),
