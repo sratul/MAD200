@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'quote.dart';
+
 void main() {
   runApp(MaterialApp(home: QuoteList()));
 }
@@ -12,10 +14,12 @@ class QuoteList extends StatefulWidget {
 }
 
 class _QuoteListState extends State<QuoteList> {
-  List<String> quotes = [
-    "We are made to persist. That's how we find out who we are. ",
-    "My home is not a place, it is people. ",
-    "Bad habits are like a comfortable bed, easy to get into, but hard to get out of."
+  List<Quote> quotes = [
+    Quote("Be yourself; everyone else is already taken.", "Oscar Wilde"),
+    Quote(
+        "To live is the rarest thing in the world. Most people exist, that is all.",
+        "Oscar Wilde"),
+    Quote("You can never be overdressed or overeducated.", "Oscar Wilde")
   ];
 
   @override
@@ -31,7 +35,11 @@ class _QuoteListState extends State<QuoteList> {
         // maps - cycles thru a list of data
         // for each item it will perform a function
         // Children properties expect a list
-        children: quotes.map((quote) => Text(quote)).toList(),
+        // for variables simply using $ is enough
+        // but for properties we have to do the following
+        children: quotes
+            .map((quote) => Text('${quote.author}:${quote.text}'))
+            .toList(),
       ),
     );
   }
