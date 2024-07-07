@@ -1,3 +1,5 @@
+import 'dart:collection';
+
 import 'package:flutter/material.dart';
 
 import 'quote.dart';
@@ -22,6 +24,34 @@ class _QuoteListState extends State<QuoteList> {
     Quote("You can never be overdressed or overeducated.", "Oscar Wilde")
   ];
 
+  Widget quoteTemplate(quote) {
+    return Card(
+      margin: EdgeInsets.fromLTRB(16, 16, 16, 0),
+      child: Padding(
+        padding: const EdgeInsets.all(12.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Text(
+              // Direct use of the value. "" and $ not needed
+              // but you cannot do string operations as earlier
+              quote.text,
+              style: TextStyle(
+                fontSize: 18,
+                color: Colors.grey[600],
+              ),
+            ),
+            SizedBox(height: 20.0),
+            Text(
+              quote.author,
+              style: TextStyle(fontSize: 14, color: Colors.grey[800]),
+            )
+          ],
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,9 +67,7 @@ class _QuoteListState extends State<QuoteList> {
         // Children properties expect a list
         // for variables simply using $ is enough
         // but for properties we have to do the following
-        children: quotes
-            .map((quote) => Text('${quote.author}:${quote.text}'))
-            .toList(),
+        children: quotes.map((quote) => quoteTemplate(quote)).toList(),
       ),
     );
   }
