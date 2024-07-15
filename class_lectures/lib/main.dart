@@ -1,7 +1,8 @@
+import 'package:class_lectures/panApp.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(TapDetectorApp());
+  runApp(PanApp());
 }
 
 class TapDetectorApp extends StatefulWidget {
@@ -23,7 +24,7 @@ class _TapDetectorAppState extends State<TapDetectorApp> {
         ),
         body: Center(
           child: GestureDetector(
-            onTap: () {
+            onDoubleTap: () {
               setState(() {
                 tapCount++;
               });
