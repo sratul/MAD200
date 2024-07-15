@@ -28,7 +28,7 @@ class _TapDetectorAppState extends State<TapDetectorApp> {
                 tapCount++;
               });
             },
-            child: Text('Tap Count: $tapCount'),
+            child: Text('Tap Count: $tapCount', style: TextStyle(fontSize: 40)),
           ),
         ),
       ),
