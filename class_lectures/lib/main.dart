@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MaterialApp());
+  runApp(FormValidationApp());
 }
 
 class FormValidationApp extends StatelessWidget {
